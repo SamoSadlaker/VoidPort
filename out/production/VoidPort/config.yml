@@ -1,1 +1,4 @@
 prefix: "&7[&dVoidPort&7]"
+world: "lobby"
+
+teleport-message: "You have been teleported to spawn"
