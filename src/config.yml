@@ -1,4 +1,9 @@
 prefix: "&7[&dVoidPort&7]"
 world: "lobby"
 
+permission: "voidport.admin"
+
 teleport-message: "You have been teleported to spawn"
+notplayer: "This commands can use only players"
+reload-completed: "&bPlugin successfully reloaded"
+command-usage: "&bPlease type &e/voidport [reload|setworld] <colored name>"

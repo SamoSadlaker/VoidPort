@@ -1,5 +1,6 @@
 package eu.samosadlaker.voidport.core;
 
+import eu.samosadlaker.voidport.commands.Admin;
 import eu.samosadlaker.voidport.listeners.VoidEnter;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
@@ -30,6 +31,7 @@ public class Main extends JavaPlugin {
         reloadConfig();
 
         registerListeners();
+        registerCommands();
 
         logger.sendMessage(Colors.formatColor("&b-------------------------------------"));
         logger.sendMessage(Colors.formatColor("&aPlugin &b" + pdf.getName() + " &asuccessfully enabled"));
@@ -39,6 +41,9 @@ public class Main extends JavaPlugin {
 
     private void registerListeners(){
         getServer().getPluginManager().registerEvents(new VoidEnter(), this);
+    }
+    private void registerCommands(){
+        getCommand("voidport").setExecutor(new Admin());
     }
 
     @Override
