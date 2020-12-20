@@ -2,6 +2,7 @@ package eu.samosadlaker.voidport.commands;
 
 import eu.samosadlaker.voidport.core.Colors;
 import eu.samosadlaker.voidport.core.Main;
+import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -34,6 +35,15 @@ public class Admin implements CommandExecutor {
                 plugin.getPluginLoader().disablePlugin(plugin);
                 plugin.getPluginLoader().enablePlugin(plugin);
                 sender.sendMessage(Colors.formatColor(prefix + config.getString("reload-completed")));
+                return true;
+            }
+
+            if(args[0].equalsIgnoreCase("setworld")){
+                String world = ((Player) sender).getWorld().getName();
+                config.set("world", world);
+                plugin.saveConfig();
+                plugin.reloadConfig();
+                sender.sendMessage(Colors.formatColor(prefix + config.getString("worldsaved")));
                 return true;
             }
 

@@ -1,6 +1,6 @@
 main: eu.samosadlaker.voidport.core.Main
 name: VoidPort
-version: 1.0
+version: 1.3
 api-version: 1.16
 author: SamoSadlaker
 website: www.samosadlaker.eu
